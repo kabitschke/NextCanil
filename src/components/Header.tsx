@@ -1,29 +1,49 @@
+"use client";
+
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+
 export default function Header() {
+
+  const pathname = usePathname();
+
   return (
     <>
-      <header className="container">
+      <header>
+        <div className="container">
+          <Link href="/">PetDevShop</Link>
 
-        <a href="/">PetDevShop</a>
-
-        <form action="/search">
-          <input
-            type="search"
-            name="q"
-            placeholder="Pesquise por raça"
-          />
-        </form>
-
+          <form method="GET" action="/search">
+            <input
+              type="search"
+              name="q"
+              placeholder="Pesquise por raça"
+            />
+          </form>
+        </div>
       </header>
 
       <nav>
         <ul>
-          <li className="{{#menu.all}}active{{/menu.all}}"> <a href="/"> Todos </a></li>
-          <li className="{{#menu.dog}}active{{/menu.dog}}"> <a href="/dogs"> Cachorros </a></li>
-          <li className="{{#menu.cat}}active{{/menu.cat}}"> <a href="/cats"> Gatos </a></li>
-          <li className="{{#menu.fish}}active{{/menu.fish}}"> <a href="/fishes"> Peixes </a></li>
+
+          <li className={pathname === "/" ? "active" : ""}>
+            <Link href="/">Todos</Link>
+          </li>
+
+          <li className={pathname === "/dogs" ? "active" : ""}>
+            <Link href="/dogs">Cachorros</Link>
+          </li>
+
+          <li className={pathname === "/cats" ? "active" : ""}>
+            <Link href="/cats">Gatos</Link>
+          </li>
+
+          <li className={pathname === "/fishes" ? "active" : ""}>
+            <Link href="/fishes">Peixes</Link>
+          </li>
+
         </ul>
       </nav>
-
     </>
   );
 }

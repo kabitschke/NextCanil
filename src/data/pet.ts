@@ -139,6 +139,24 @@ const data: Pets[] = [
 
 ];
 
+export const petConfig = {
+  dogs: {
+    type: "dog" as PetType,
+    title: "Cachorros",
+    background: "banner_dog.jpg"
+  },
+  cats: {
+    type: "cat" as PetType,
+    title: "Gatos",
+    background: "banner_cat.jpg"
+  },
+  fishes: {
+    type: "fish" as PetType,
+    title: "Peixes",
+    background: "banner_fish.jpg"
+  }
+};
+
 export const Pet = {
   getAll: (): Pets[] => {
     //Todos os pets
