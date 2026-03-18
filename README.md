@@ -7,7 +7,7 @@ Este projeto é uma aplicação web desenvolvida com Next.js, onde é possível 
 `npm install`
 
 ### Para rodar o projeto
-git clone https://github.com/seu-usuario/seu-repositorio.git
+
 `npm run start-dev`
 
 ### 📌 Melhorias futuras
