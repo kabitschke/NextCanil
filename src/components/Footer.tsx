@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <footer className="container">
+    <footer >
       Feito com ❤ por Maycon Kabitschke
     </footer>
   );

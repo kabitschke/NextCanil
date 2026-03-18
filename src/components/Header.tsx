@@ -2,10 +2,13 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useSearchParams } from "next/navigation";
 
 export default function Header() {
 
   const pathname = usePathname();
+  const searchParams = useSearchParams();
+  const query = searchParams.get("q") || "";
 
   return (
     <>
@@ -18,6 +21,7 @@ export default function Header() {
               type="search"
               name="q"
               placeholder="Pesquise por raça"
+              defaultValue={query}
             />
           </form>
         </div>
