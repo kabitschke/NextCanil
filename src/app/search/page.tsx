@@ -32,7 +32,7 @@ export default async function Search({ searchParams }: Props) {
           ))}
         </div>
       ) : (
-        <h3>Nenhum resultado encontrado</h3>
+        <h3 style={{ textAlign: "center", marginTop: "50px" }}>Nenhum resultado encontrado</h3>
       )}
 
     </div>
