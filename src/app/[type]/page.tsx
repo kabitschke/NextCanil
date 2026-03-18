@@ -1,3 +1,4 @@
+import { notFound } from "next/navigation";
 import { petConfig, Pet } from "../../data/pet";
 import { Pets } from '../../types/types'
 
@@ -16,8 +17,13 @@ export default async function PetType({ params }: Props) {
   // } else {
   //   list = [];
   // }
-
   //Se config existir SIM → busca pets → array de Pets NÃO → array vazio
+
+
+  if (!config) {
+    notFound();
+  }
+
   const list: Pets[] = config
     ? Pet.getFromType(config.type)
     : [];
